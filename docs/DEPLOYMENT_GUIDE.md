@@ -35,10 +35,19 @@ Add the following DNS records in your domain registrar or Cloudflare dashboard:
 
 ## 3. Deployment 1: Central Backend API (Render)
 
-### Step 1: Create Web Service
+### Option A: 1-Click Render Blueprint (Recommended)
+Because the repository contains a pre-configured `render.yaml` at the root:
+1. Log in to [Render Dashboard](https://dashboard.render.com).
+2. Click **New +** -> **Blueprint**.
+3. Select your GitHub repository (`PandithSurya/GVKSS-ecommerce`).
+4. Render automatically parses `render.yaml`, configures the build & start commands, health check `/health`, and auto-generates secure JWT/cookie secrets.
+5. Provide your MongoDB Atlas connection string when prompted for `DATABASE_URL` and `MONGODB_URI`.
+6. Click **Apply** to deploy.
+
+### Option B: Manual Web Service Setup
 1. Log in to [Render Dashboard](https://dashboard.render.com).
 2. Click **New +** -> **Web Service**.
-3. Connect your GitHub repository.
+3. Connect your GitHub repository (`PandithSurya/GVKSS-ecommerce`).
 4. Configure the service settings:
    - **Name:** `gvkss-organic-backend`
    - **Region:** Singapore / Mumbai (closest to India users)
