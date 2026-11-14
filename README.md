@@ -34,9 +34,12 @@ Organic-Products-Website/
 │   ├── ARCHITECTURE.md         # Monorepo architecture, subdomain isolation, security
 │   ├── API_DOCUMENTATION.md    # API endpoints, request/response formats
 │   ├── DATABASE_SCHEMA.md      # Mongoose models, indexes, transactions
-│   └── DEPLOYMENT_GUIDE.md     # Production deployment instructions (Vercel & Render)
+│   ├── DEPLOYMENT_GUIDE.md     # Production deployment instructions (Vercel & Render)
+│   ├── ARCHITECTURE_AUDIT.md   # Pre-migration audit and security analysis
+│   ├── BACKEND_INTEGRATION_PLAN.md # Refactoring plan & milestones
+│   └── MONGODB_ATLAS_SETUP.md  # Database cluster setup & connection string guide
 │
-├── ARCHITECTURE_AUDIT.md       # Pre-migration audit and security analysis
+├── render.yaml                 # Render infrastructure-as-code blueprint
 ├── package.json                # Workspace orchestrator
 └── README.md
 ```

@@ -3,7 +3,7 @@
  * Seamlessly interfaces with the production-ready Node/Express/MongoDB backend.
  */
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api/v1';
+const BASE_URL = (import.meta.env.VITE_API_BASE_URL || '/api/v1').replace(/\/+$/, '');
 
 let accessTokenMemory: string | null = null;
 let adminAccessTokenMemory: string | null = null;

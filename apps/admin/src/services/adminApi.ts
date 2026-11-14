@@ -3,7 +3,7 @@
  * Interfaces with the centralized backend API: https://api.YOURDOMAIN.com/api/v1
  */
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api/v1';
+const BASE_URL = (import.meta.env.VITE_API_BASE_URL || '/api/v1').replace(/\/+$/, '');
 
 let adminAccessTokenMemory: string | null = null;
 
