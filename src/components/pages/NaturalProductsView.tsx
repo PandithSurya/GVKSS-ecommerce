@@ -46,7 +46,7 @@ export const NaturalProductsView: React.FC<NaturalProductsViewProps> = ({
     <div className="py-10 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Banner */}
-        <div className="bg-emerald-950 text-white rounded-3xl p-6 sm:p-12 relative overflow-hidden shadow-xl border-b-4 border-emerald-600">
+        <div className="bg-emerald-950 text-white rounded-2xl p-6 sm:p-12 relative overflow-hidden shadow-xl border-b-4 border-emerald-600">
           <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="relative z-10 max-w-3xl space-y-3">
@@ -72,7 +72,7 @@ export const NaturalProductsView: React.FC<NaturalProductsViewProps> = ({
         </div>
 
         {/* Brochure Highlights Matrix */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-emerald-100 shadow-sm space-y-4">
+        <div className="bg-white rounded-2xl p-6 sm:p-8 border border-emerald-100 shadow-sm space-y-4">
           <div className="flex items-center gap-2 mb-2">
             <Leaf className="w-5 h-5 text-emerald-600" />
             <h2 className="font-sans font-black text-lg sm:text-xl text-stone-900">

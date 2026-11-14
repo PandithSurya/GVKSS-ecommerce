@@ -15,10 +15,13 @@ import {
   Flame,
   Sparkles,
   Leaf,
-  ArrowRight
+  ArrowRight,
+  User as UserIcon,
+  Shield
 } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { useCart } from '../../context/CartContext';
+import { useAuth } from '../../context/AuthContext';
 import { categories } from '../../data/categories';
 import type { CategoryId } from '../../types';
 
@@ -27,16 +30,19 @@ interface HeaderProps {
   setActiveTab: (tab: string) => void;
   onSelectCategory?: (catId: CategoryId) => void;
   onOpenSearch: () => void;
+  onOpenMyOrders?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
   setActiveTab,
   onSelectCategory,
-  onOpenSearch
+  onOpenSearch,
+  onOpenMyOrders,
 }) => {
   const { language, toggleLanguage, t } = useLanguage();
   const { cartCount, setIsCartOpen } = useCart();
+  const { user, isAuthenticated, setIsAuthModalOpen, logout } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
   const [isMobileShopExpanded, setIsMobileShopExpanded] = useState(false);
@@ -106,7 +112,7 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-sm transition-all animate-pop-out-down" style={{ animationDelay: '100ms' }}>
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-sm transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 gap-4 sm:gap-6">
           
@@ -189,7 +195,7 @@ export const Header: React.FC<HeaderProps> = ({
               {isShopDropdownOpen && (
                 <div 
                   onMouseLeave={() => setIsShopDropdownOpen(false)}
-                  className="absolute top-full -left-20 w-[720px] bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-emerald-200 p-5 mt-1 z-50 animate-fadeIn"
+                  className="absolute top-full -left-20 w-[720px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-stone-200/90 p-5 mt-1 z-50 animate-fadeIn"
                 >
                   <div className="flex items-center justify-between pb-3 mb-3 border-b border-stone-100">
                     <div>
@@ -327,6 +333,63 @@ export const Header: React.FC<HeaderProps> = ({
               {language === 'en' ? 'తెలుగు' : 'English'}
             </button>
 
+            {/* Customer Account / Sign In Pill */}
+            {isAuthenticated ? (
+              <div className="relative group">
+                <button
+                  type="button"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-900 border border-emerald-200 hover:bg-emerald-100 transition"
+                  title={user?.email}
+                >
+                  <UserIcon className="w-3.5 h-3.5 text-emerald-700" />
+                  <span className="hidden md:inline max-w-[90px] truncate">{user?.fullName.split(' ')[0]}</span>
+                </button>
+                <div className="absolute right-0 top-full mt-1 w-44 bg-white rounded-2xl shadow-xl border border-stone-200 p-2 hidden group-hover:block z-50">
+                  <div className="px-3 py-2 border-b border-stone-100">
+                    <p className="text-xs font-bold text-stone-900 truncate">{user?.fullName}</p>
+                    <p className="text-[10px] text-stone-500 truncate">{user?.email}</p>
+                  </div>
+                  <button
+                    onClick={onOpenMyOrders}
+                    className="w-full text-left px-3 py-2 text-xs font-bold text-stone-700 hover:bg-emerald-50 hover:text-emerald-800 rounded-xl transition flex items-center gap-2 mt-1"
+                  >
+                    <Package className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>{language === 'te' ? 'నా ఆర్డర్లు' : 'My Orders'}</span>
+                  </button>
+                  <button
+                    onClick={logout}
+                    className="w-full text-left px-3 py-2 text-xs font-bold text-red-600 hover:bg-red-50 rounded-xl transition mt-0.5"
+                  >
+                    Sign Out
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setIsAuthModalOpen(true)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-stone-100 text-stone-700 hover:bg-emerald-50 hover:text-emerald-900 border border-stone-200 transition"
+                title="Sign In / Register"
+              >
+                <UserIcon className="w-3.5 h-3.5 text-emerald-700" />
+                <span className="hidden sm:inline">{language === 'te' ? 'సైన్ ఇన్' : 'Sign In'}</span>
+              </button>
+            )}
+
+            {/* Admin Console Access */}
+            <button
+              type="button"
+              onClick={() => setActiveTab('admin')}
+              title="GVKSS Admin Operations Console"
+              className={`p-2 rounded-full transition ${
+                activeTab === 'admin'
+                  ? 'bg-emerald-900 text-emerald-200 shadow-sm'
+                  : 'text-stone-500 hover:text-emerald-800 hover:bg-emerald-50'
+              }`}
+            >
+              <Shield className="w-4 h-4" />
+            </button>
+
             {/* Cart Icon with badge */}
             <button
               onClick={() => setIsCartOpen(true)}
@@ -341,10 +404,10 @@ export const Header: React.FC<HeaderProps> = ({
               )}
             </button>
 
-            {/* Pure Green Pill Button */}
+            {/* Primary Action Button */}
             <button
               onClick={() => handleNavClick('contact')}
-              className="hidden sm:inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm shadow-green-glow hover:shadow-lg transition-all transform hover:-translate-y-0.5 whitespace-nowrap"
+              className="hidden sm:inline-flex items-center justify-center px-5 py-2 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5 whitespace-nowrap"
             >
               <span>{language === 'te' ? 'సంప్రదించండి' : 'Contact Us'}</span>
             </button>

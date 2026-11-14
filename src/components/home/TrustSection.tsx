@@ -69,10 +69,10 @@ export const TrustSection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-cream-100/60 rounded-3xl p-6 border border-stone-200/80 shadow-sm hover:shadow-foodie transition text-center sm:text-left flex flex-col justify-between"
+                className="bg-white/80 rounded-2xl p-6 border border-stone-200/90 shadow-sm hover:shadow-md transition text-center sm:text-left flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-white text-emerald-600 border border-emerald-200 flex items-center justify-center mx-auto sm:mx-0 mb-4 shadow-sm">
+                  <div className="w-12 h-12 rounded-xl bg-stone-50 text-emerald-800 border border-stone-200 flex items-center justify-center mx-auto sm:mx-0 mb-4 shadow-sm">
                     <Icon className="w-6 h-6" />
                   </div>
                   <h3 className="font-sans font-bold text-base text-stone-900">

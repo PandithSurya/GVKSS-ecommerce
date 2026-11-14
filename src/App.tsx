@@ -29,10 +29,14 @@ import { OrderReceipt } from './components/checkout/OrderReceipt';
 import { ProductModal } from './components/shop/ProductModal';
 import { SearchModal } from './components/ui/SearchModal';
 import { Toast } from './components/ui/Toast';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import { AuthModal } from './components/auth/AuthModal';
+import { MyOrdersModal } from './components/orders/MyOrdersModal';
+import { AdminDashboard } from './components/admin/AdminDashboard';
 import type { Product, CategoryId, Order } from './types';
 import { useCart } from './context/CartContext';
 
-type LoadStage = 'loading' | 'background_only' | 'ready';
+type LoadStage = 'loading' | 'ready';
 
 const MainAppContent: React.FC = () => {
   const [loadStage, setLoadStage] = useState<LoadStage>('loading');
@@ -41,24 +45,17 @@ const MainAppContent: React.FC = () => {
   const [modalProduct, setModalProduct] = useState<Product | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [isMyOrdersOpen, setIsMyOrdersOpen] = useState(false);
   const [completedOrder, setCompletedOrder] = useState<Order | null>(null);
+  const [pendingCheckout, setPendingCheckout] = useState(false);
 
   const { addToCart } = useCart();
+  const { isAuthenticated, setIsAuthModalOpen } = useAuth();
 
-  // Handle clean transition: loader -> background only -> elements pop out
+  // Handle seamless transition: loader finishes -> store displays immediately
   const handleLoaderFinished = () => {
-    setLoadStage('background_only');
+    setLoadStage('ready');
   };
-
-  useEffect(() => {
-    if (loadStage === 'background_only') {
-      // Allow background to be seen cleanly first, then trigger element pop out
-      const timer = setTimeout(() => {
-        setLoadStage('ready');
-      }, 250);
-      return () => clearTimeout(timer);
-    }
-  }, [loadStage]);
 
   const handleSelectCategory = (catId: CategoryId) => {
     setSelectedCategory(catId);
@@ -71,13 +68,29 @@ const MainAppContent: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleProceedToCheckout = () => {
+    if (!isAuthenticated) {
+      setPendingCheckout(true);
+      setIsAuthModalOpen(true);
+    } else {
+      setIsCheckoutOpen(true);
+    }
+  };
+
+  useEffect(() => {
+    if (isAuthenticated && pendingCheckout) {
+      setPendingCheckout(false);
+      setIsCheckoutOpen(true);
+    }
+  }, [isAuthenticated, pendingCheckout]);
+
   const handleOpenProductDetails = (product: Product) => {
     setModalProduct(product);
   };
 
   const handleBuyNow = (product: Product, quantity: number) => {
     addToCart(product, quantity);
-    setIsCheckoutOpen(true);
+    handleProceedToCheckout();
   };
 
   return (
@@ -95,6 +108,9 @@ const MainAppContent: React.FC = () => {
 
         {/* 3. Individual Elements Pop Out (Only after background_only stage) */}
         {loadStage === 'ready' && (
+          activeTab === 'admin' ? (
+            <AdminDashboard onBackToStore={() => handleTabChange('home')} />
+          ) : (
           <>
             {/* Top Notification Banner (Pops Down from Above) */}
             <TopBanner />
@@ -105,6 +121,7 @@ const MainAppContent: React.FC = () => {
               setActiveTab={handleTabChange}
               onSelectCategory={handleSelectCategory}
               onOpenSearch={() => setIsSearchOpen(true)}
+              onOpenMyOrders={() => setIsMyOrdersOpen(true)}
             />
 
             {/* Dynamic Main Body Content */}
@@ -203,7 +220,14 @@ const MainAppContent: React.FC = () => {
 
             {/* Cart Drawer Slide-over */}
             <CartDrawer
-              onOpenCheckout={() => setIsCheckoutOpen(true)}
+              onOpenCheckout={handleProceedToCheckout}
+              onBrowseShop={() => handleTabChange('shop')}
+            />
+
+            {/* My Orders History Modal */}
+            <MyOrdersModal
+              isOpen={isMyOrdersOpen}
+              onClose={() => setIsMyOrdersOpen(false)}
               onBrowseShop={() => handleTabChange('shop')}
             />
 
@@ -240,7 +264,11 @@ const MainAppContent: React.FC = () => {
 
             {/* Toast Notification */}
             <Toast />
+
+            {/* Customer Authentication Modal */}
+            <AuthModal />
           </>
+          )
         )}
       </div>
     </>
@@ -250,9 +278,11 @@ const MainAppContent: React.FC = () => {
 export const App: React.FC = () => {
   return (
     <LanguageProvider>
-      <CartProvider>
-        <MainAppContent />
-      </CartProvider>
+      <AuthProvider>
+        <CartProvider>
+          <MainAppContent />
+        </CartProvider>
+      </AuthProvider>
     </LanguageProvider>
   );
 };

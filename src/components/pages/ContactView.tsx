@@ -31,7 +31,7 @@ export const ContactView: React.FC = () => {
     <div className="py-10 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Banner */}
-        <div className="bg-emerald-950 text-white rounded-3xl p-6 sm:p-12 relative overflow-hidden shadow-xl border-b-4 border-emerald-600">
+        <div className="bg-emerald-950 text-white rounded-2xl p-6 sm:p-12 relative overflow-hidden shadow-xl border-b-4 border-emerald-600">
           <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="relative z-10 max-w-3xl space-y-3">
@@ -61,7 +61,7 @@ export const ContactView: React.FC = () => {
           {businessInfo.locations.map((loc, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-3xl p-6 sm:p-7 border border-emerald-100 shadow-sm flex flex-col justify-between"
+              className="bg-white rounded-2xl p-6 sm:p-7 border border-emerald-100 shadow-sm flex flex-col justify-between"
             >
               <div className="space-y-3">
                 <div className="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center">
@@ -83,7 +83,7 @@ export const ContactView: React.FC = () => {
         </div>
 
         {/* Upcoming Branches Banner */}
-        <div className="p-6 bg-emerald-50/70 rounded-3xl border border-emerald-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="p-6 bg-emerald-50/70 rounded-2xl border border-emerald-200 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="space-y-1 text-center sm:text-left">
             <span className="text-xs font-bold text-emerald-800 uppercase tracking-wider block">
               {language === 'te' ? 'త్వరలో ప్రారంభం' : 'Coming Soon'}
@@ -109,7 +109,7 @@ export const ContactView: React.FC = () => {
         {/* Contact Form & Phone Directory */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Direct Dial Directory */}
-          <div className="lg:col-span-5 bg-emerald-950 text-white p-6 sm:p-8 rounded-3xl space-y-6 shadow-xl">
+          <div className="lg:col-span-5 bg-emerald-950 text-white p-6 sm:p-8 rounded-2xl space-y-6 shadow-xl">
             <div>
               <h3 className="font-sans font-bold text-xl text-white">
                 {language === 'te' ? 'సంప్రదించే ఫోన్ నంబర్లు' : 'Phone Directory'}
@@ -156,7 +156,7 @@ export const ContactView: React.FC = () => {
           </div>
 
           {/* Contact Inquiry Form */}
-          <div className="lg:col-span-7 bg-white p-6 sm:p-8 rounded-3xl border border-emerald-100 shadow-sm">
+          <div className="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-emerald-100 shadow-sm">
             <h3 className="font-sans font-black text-xl text-stone-900 mb-1">
               {language === 'te' ? 'మాకు సందేశం పంపండి' : 'Send an Inquiry / Message'}
             </h3>
@@ -251,7 +251,7 @@ export const ContactView: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="py-3.5 px-7 rounded-full bg-emerald-600 text-white font-bold text-xs sm:text-sm hover:bg-emerald-700 transition flex items-center justify-center gap-2 shadow-green-glow"
+                  className="py-3.5 px-7 rounded-xl bg-emerald-800 text-white font-bold text-xs sm:text-sm hover:bg-emerald-900 transition flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
                 >
                   <Send className="w-4 h-4" />
                   <span>Submit Message</span>

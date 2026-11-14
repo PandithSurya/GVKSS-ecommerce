@@ -60,64 +60,64 @@ export const FeaturedPacks: React.FC = () => {
             return (
               <div
                 key={pack.id}
-                className="bg-white rounded-3xl border-2 border-emerald-100 hover:border-emerald-400 shadow-sm hover:shadow-foodie transition-all duration-300 overflow-hidden flex flex-col justify-between relative group"
+                className="bg-white rounded-2xl border border-stone-200/90 hover:border-emerald-700/40 shadow-subtle hover:shadow-foodie transition-all duration-200 overflow-hidden flex flex-col justify-between relative group"
               >
                 {/* Top Badge */}
-                <div className="bg-emerald-900 text-white px-6 py-3.5 flex items-center justify-between">
+                <div className="bg-stone-900 text-white px-6 py-3.5 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <Package className="w-4 h-4 text-emerald-300" />
+                    <Package className="w-4 h-4 text-emerald-400" />
                     <span className="text-xs font-bold tracking-wide uppercase">
                       {pack.badge}
                     </span>
                   </div>
-                  <span className="text-xs font-bold text-emerald-200">
+                  <span className="text-xs font-semibold text-stone-300">
                     {pack.itemCount} {t.items} ({pack.totalWeightApprox})
                   </span>
                 </div>
 
-                <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
                   <div>
                     {/* Titles */}
                     <div className="mb-4">
-                      <h3 className="font-sans font-black text-xl sm:text-2xl text-stone-900 leading-snug">
+                      <h3 className="font-sans font-bold text-xl sm:text-2xl text-stone-900 leading-snug">
                         {pack.name}
                       </h3>
-                      <p className="text-sm font-bold text-emerald-800 font-telugu mt-1">
+                      <p className="text-sm font-semibold text-emerald-800 font-telugu mt-0.5">
                         {pack.teluguName}
                       </p>
                     </div>
 
                     {/* Price Banner */}
-                    <div className="p-4 bg-emerald-50/50 rounded-2xl border border-emerald-100 mb-6 flex items-center justify-between">
+                    <div className="p-4 bg-stone-50 rounded-xl border border-stone-200 mb-5 flex items-center justify-between">
                       <div>
-                        <span className="text-xs text-stone-500 font-medium block">
+                        <span className="text-[11px] text-stone-500 font-medium block">
                           Monthly Provision Price
                         </span>
                         <div className="flex items-baseline gap-2">
-                          <span className="text-3xl font-black text-emerald-900">
+                          <span className="text-2xl sm:text-3xl font-black text-emerald-950 font-mono">
                             ₹{pack.price.toLocaleString('en-IN')}
                           </span>
-                          <span className="text-sm text-stone-400 line-through">
+                          <span className="text-xs text-stone-400 line-through font-mono">
                             ₹{pack.originalPrice.toLocaleString('en-IN')}
                           </span>
                         </div>
                       </div>
 
                       <div className="text-right">
-                        <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                        <span className="inline-block px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
                           ✓ Free Doorstep Delivery
                         </span>
                       </div>
                     </div>
 
                     {/* Highlights Bullet List */}
-                    <div className="space-y-2.5 mb-6">
+                    <div className="space-y-2 mb-5">
                       {pack.highlights.map((h, i) => (
                         <div
                           key={i}
                           className="flex items-start gap-2.5 text-xs sm:text-sm text-stone-700"
                         >
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
                           <span>{language === 'te' ? h.te : h.en}</span>
                         </div>
                       ))}
@@ -125,8 +125,8 @@ export const FeaturedPacks: React.FC = () => {
 
                     {/* Free Gift Alert for Pack 9000 */}
                     {pack.id === 'pack-9000' && (
-                      <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-950 font-semibold mb-6 flex items-center gap-2">
-                        <Gift className="w-4 h-4 text-emerald-600 shrink-0" />
+                      <div className="p-3 bg-emerald-50/70 border border-emerald-200 rounded-xl text-xs text-emerald-950 font-semibold mb-5 flex items-center gap-2">
+                        <Gift className="w-4 h-4 text-emerald-700 shrink-0" />
                         <span>{t.pack.freeGiftNotice}</span>
                       </div>
                     )}
@@ -134,10 +134,10 @@ export const FeaturedPacks: React.FC = () => {
                     {/* Toggle Full Item List */}
                     <button
                       onClick={() => toggleExpand(pack.id)}
-                      className="w-full py-2.5 px-4 rounded-xl bg-stone-50 hover:bg-emerald-50 text-stone-800 text-xs font-bold transition flex items-center justify-between mb-4 border border-stone-200"
+                      className="w-full py-2.5 px-4 rounded-xl bg-stone-50 hover:bg-stone-100 text-stone-800 text-xs font-semibold transition-colors flex items-center justify-between mb-4 border border-stone-200"
                     >
                       <span className="flex items-center gap-2">
-                        <Layers className="w-4 h-4 text-emerald-700" />
+                        <Layers className="w-4 h-4 text-emerald-800" />
                         <span>
                           {isExpanded
                             ? 'Hide Item Breakdown'
@@ -153,18 +153,18 @@ export const FeaturedPacks: React.FC = () => {
 
                     {/* Expanded Items Table */}
                     {isExpanded && (
-                      <div className="border border-emerald-100 rounded-2xl overflow-hidden mb-6 max-h-64 overflow-y-auto animate-fadeIn">
+                      <div className="border border-stone-200 rounded-xl overflow-hidden mb-5 max-h-64 overflow-y-auto">
                         <table className="w-full text-left text-xs">
-                          <thead className="bg-emerald-50 text-emerald-950 font-bold sticky top-0">
+                          <thead className="bg-stone-50 text-stone-800 font-bold sticky top-0 border-b border-stone-200">
                             <tr>
                               <th className="py-2 px-3">#</th>
                               <th className="py-2 px-3">Product Name</th>
                               <th className="py-2 px-3 text-right">Quantity</th>
                             </tr>
                           </thead>
-                          <tbody className="divide-y divide-emerald-50">
+                          <tbody className="divide-y divide-stone-100">
                             {pack.items.map((item, idx) => (
-                              <tr key={idx} className="hover:bg-emerald-50/40">
+                              <tr key={idx} className="hover:bg-stone-50/70">
                                 <td className="py-1.5 px-3 text-stone-400">
                                   {item.slNo || idx + 1}
                                 </td>
@@ -190,10 +190,10 @@ export const FeaturedPacks: React.FC = () => {
                   </div>
 
                   {/* Actions */}
-                  <div className="pt-4 border-t border-stone-100 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="pt-4 border-t border-stone-100 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     <button
                       onClick={() => addMonthlyPack(pack)}
-                      className="py-3 px-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-green-glow active:scale-95"
+                      className="py-2.5 px-4 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs sm:text-sm transition-colors flex items-center justify-center gap-2 shadow-sm"
                     >
                       <ShoppingBag className="w-4 h-4 text-emerald-200" />
                       <span>{t.pack.addEntirePack}</span>
@@ -201,9 +201,9 @@ export const FeaturedPacks: React.FC = () => {
 
                     <button
                       onClick={() => handleWhatsAppOrderPack(pack)}
-                      className="py-3 px-4 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-sm active:scale-95"
+                      className="py-2.5 px-4 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 border border-stone-200 font-semibold text-xs sm:text-sm transition-colors flex items-center justify-center gap-2 shadow-sm"
                     >
-                      <MessageCircle className="w-4 h-4 text-emerald-600" />
+                      <MessageCircle className="w-4 h-4 text-emerald-700" />
                       <span>{t.orderOnWhatsApp}</span>
                     </button>
                   </div>

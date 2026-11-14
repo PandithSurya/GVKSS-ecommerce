@@ -57,7 +57,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-emerald-950/75 backdrop-blur-sm overflow-y-auto animate-fadeIn">
       <div className="fixed inset-0" onClick={onClose}></div>
 
-      <div className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-emerald-100 z-10 my-6">
+      <div className="relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-stone-200/90 z-10 my-6">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -165,10 +165,10 @@ export const ProductModal: React.FC<ProductModalProps> = ({
               {/* Quantity selector */}
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold text-stone-700">Quantity:</span>
-                <div className="inline-flex items-center border border-emerald-200 rounded-full bg-stone-50 overflow-hidden">
+                <div className="inline-flex items-center border border-stone-200 rounded-xl bg-stone-50 overflow-hidden">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="p-2 hover:bg-emerald-50 text-stone-600 transition"
+                    className="p-2 hover:bg-stone-100 text-stone-600 transition"
                   >
                     <Minus className="w-3.5 h-3.5" />
                   </button>
@@ -177,7 +177,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                   </span>
                   <button
                     onClick={() => setQuantity(quantity + 1)}
-                    className="p-2 hover:bg-emerald-50 text-stone-600 transition"
+                    className="p-2 hover:bg-stone-100 text-stone-600 transition"
                   >
                     <Plus className="w-3.5 h-3.5" />
                   </button>
@@ -188,7 +188,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
               <div className="grid grid-cols-2 gap-2.5">
                 <button
                   onClick={handleAddToCart}
-                  className="py-3 px-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-green-glow active:scale-95"
+                  className="py-3 px-4 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
                 >
                   <ShoppingBag className="w-4 h-4 text-emerald-200" />
                   <span>Add to Cart (₹{product.price * quantity})</span>
@@ -196,7 +196,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
 
                 <button
                   onClick={handleBuyNow}
-                  className="py-3 px-4 rounded-full bg-stone-900 hover:bg-stone-950 text-white font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 active:scale-95"
+                  className="py-3 px-4 rounded-xl bg-stone-900 hover:bg-stone-950 text-white font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
                 >
                   <Zap className="w-4 h-4 text-emerald-300" />
                   <span>{t.buyNow}</span>
@@ -206,7 +206,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
               {/* WhatsApp Quick Order */}
               <button
                 onClick={handleWhatsApp}
-                className="w-full py-2.5 px-4 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold text-xs transition flex items-center justify-center gap-2"
+                className="w-full py-2.5 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold text-xs transition flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4 text-emerald-600" />
                 <span>Order this item on WhatsApp</span>

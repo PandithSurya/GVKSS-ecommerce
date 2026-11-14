@@ -1,0 +1,44 @@
+services:
+  - type: web
+    name: gvkss-organic-backend
+    runtime: node
+    plan: starter
+    region: singapore
+    rootDir: apps/backend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/v1/products
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: API_PREFIX
+        value: /api/v1
+      - key: CLIENT_URL
+        value: https://www.YOURDOMAIN.com
+      - key: ADMIN_URL
+        value: https://admin.YOURDOMAIN.com
+      - key: CORS_ORIGIN
+        value: https://www.YOURDOMAIN.com,https://admin.YOURDOMAIN.com
+      - key: DATABASE_URL
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_ACCESS_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: COOKIE_SECRET
+        generateValue: true
+      - key: COOKIE_DOMAIN
+        value: .YOURDOMAIN.com
+      - key: INITIAL_ADMIN_EMAIL
+        value: admin@gvkss.org
+      - key: INITIAL_ADMIN_PASSWORD
+        value: AdminSecure@2026!
+      - key: BUSINESS_UPI_ID
+        value: 9494300473@okbizaxis
+      - key: BUSINESS_DISPLAY_NAME
+        value: GVKSS Organics

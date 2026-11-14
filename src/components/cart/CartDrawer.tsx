@@ -135,7 +135,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                     setIsCartOpen(false);
                     onBrowseShop();
                   }}
-                  className="px-6 py-2.5 rounded-full bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 transition shadow-sm"
+                  className="px-6 py-2.5 rounded-xl bg-emerald-800 text-white font-bold text-xs hover:bg-emerald-900 transition shadow-sm hover:shadow-md"
                 >
                   {t.cart.startShopping}
                 </button>
@@ -245,7 +245,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   setIsCartOpen(false);
                   onOpenCheckout();
                 }}
-                className="w-full py-3.5 px-4 rounded-full bg-emerald-600 text-white font-bold text-sm hover:bg-emerald-700 transition flex items-center justify-center gap-2 shadow-green-glow active:scale-98"
+                className="w-full py-3.5 px-4 rounded-xl bg-emerald-800 text-white font-bold text-sm hover:bg-emerald-900 transition flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
               >
                 <span>{t.cart.checkoutBtn}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -254,7 +254,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               {/* Quick WhatsApp Checkout */}
               <button
                 onClick={handleWhatsAppOrderCart}
-                className="w-full py-2.5 px-4 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold text-xs transition flex items-center justify-center gap-2 shadow-sm"
+                className="w-full py-2.5 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold text-xs transition flex items-center justify-center gap-2 shadow-sm"
               >
                 <MessageCircle className="w-4 h-4 text-emerald-600" />
                 <span>{t.orderOnWhatsApp}</span>

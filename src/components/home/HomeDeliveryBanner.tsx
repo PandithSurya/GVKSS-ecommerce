@@ -51,9 +51,9 @@ export const HomeDeliveryBanner: React.FC = () => {
           </div>
 
           {/* Right Action Box */}
-          <div className="lg:col-span-5 bg-white text-stone-900 p-6 sm:p-7 rounded-3xl shadow-2xl border-4 border-emerald-500/20 space-y-4">
+          <div className="lg:col-span-5 bg-white text-stone-900 p-6 sm:p-7 rounded-2xl shadow-xl border border-emerald-700/40 space-y-4">
             <div className="flex items-center gap-3 pb-3 border-b border-stone-200">
-              <div className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-stone-50 text-emerald-800 flex items-center justify-center shrink-0 border border-stone-200">
                 <Phone className="w-5 h-5" />
               </div>
               <div>
@@ -69,7 +69,7 @@ export const HomeDeliveryBanner: React.FC = () => {
             <div className="space-y-2 text-xs">
               <a
                 href="tel:9391628344"
-                className="w-full py-3 px-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition flex items-center justify-center gap-2 shadow-green-glow"
+                className="w-full py-3 px-4 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-sm transition flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
               >
                 <Phone className="w-4 h-4 text-emerald-200" />
                 <span>Call 9391628344</span>
@@ -77,9 +77,9 @@ export const HomeDeliveryBanner: React.FC = () => {
 
               <a
                 href="tel:9346749301"
-                className="w-full py-2.5 px-4 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-900 font-bold text-xs transition flex items-center justify-center gap-2"
+                className="w-full py-2.5 px-4 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-900 font-bold text-xs transition flex items-center justify-center gap-2"
               >
-                <Phone className="w-3.5 h-3.5 text-emerald-700" />
+                <Phone className="w-3.5 h-3.5 text-emerald-800" />
                 <span>Secondary Phone: 9346749301</span>
               </a>
 
@@ -87,7 +87,7 @@ export const HomeDeliveryBanner: React.FC = () => {
                 href="https://wa.me/919391628344?text=Namaste%2C%20I%20want%20to%20order%20groceries%20for%20home%20delivery."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold text-xs transition flex items-center justify-center gap-2"
+                className="w-full py-2.5 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold text-xs transition flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4 text-emerald-600" />
                 <span>Order via WhatsApp</span>

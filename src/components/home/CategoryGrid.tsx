@@ -34,7 +34,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onSelectCategory }) 
             <div
               key={cat.id}
               onClick={() => onSelectCategory(cat.id)}
-              className="group bg-white rounded-3xl p-4 border border-stone-200/80 hover:border-emerald-400 shadow-sm hover:shadow-foodie transition-all duration-300 cursor-pointer flex flex-col justify-between overflow-hidden relative transform hover:-translate-y-1.5"
+              className="group bg-white rounded-2xl p-4 border border-stone-200/90 hover:border-emerald-700/60 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer flex flex-col justify-between overflow-hidden relative transform hover:-translate-y-1"
             >
               {cat.badge && (
                 <span className="absolute top-3 right-3 px-2.5 py-0.5 rounded-full text-[9px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
@@ -43,12 +43,12 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onSelectCategory }) 
               )}
 
               <div>
-                <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-3 bg-emerald-50/50 p-1">
+                <div className="w-full aspect-[4/3] rounded-xl overflow-hidden mb-3 bg-stone-50 p-1">
                   <img
                     src={cat.image}
                     alt={cat.name}
                     loading="lazy"
-                    className="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
 

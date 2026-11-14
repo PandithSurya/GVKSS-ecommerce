@@ -171,33 +171,33 @@ export const OrganicProcessShowcase: React.FC<{ onExploreShop?: () => void }> = 
             <div
               key={step.id}
               onClick={() => setSelectedStep(step)}
-              className="group bg-white rounded-3xl border border-stone-200/80 hover:border-emerald-400 shadow-sm hover:shadow-foodie transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer relative transform hover:-translate-y-2"
+              className="group bg-white rounded-2xl border border-stone-200/90 hover:border-emerald-700/60 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer relative transform hover:-translate-y-1"
             >
               {/* Step Number Top Badge */}
-              <div className="absolute top-3.5 left-3.5 z-20 flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/85 backdrop-blur-md text-white text-[11px] font-black border border-white/20">
+              <div className="absolute top-3.5 left-3.5 z-20 flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-900/85 backdrop-blur-md text-white text-[11px] font-bold border border-white/20">
                 <span className="text-emerald-400 font-mono">{step.stepNumber}</span>
                 <span>•</span>
                 <span>{language === 'te' ? step.badgeTe : step.badgeEn}</span>
               </div>
 
               {/* Photographic Card Image */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-emerald-50">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
                 <img
                   src={step.image}
                   alt={step.titleEn}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
               </div>
 
               {/* Card Text Content */}
               <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                 <div>
-                  <span className="text-[11px] font-extrabold text-emerald-700 uppercase tracking-wider block">
+                  <span className="text-[11px] font-extrabold text-emerald-800 uppercase tracking-wider block">
                     {language === 'te' ? step.subtitleTe : step.subtitleEn}
                   </span>
 
-                  <h3 className="font-sans font-black text-base sm:text-lg text-stone-900 group-hover:text-emerald-700 transition leading-snug mt-1">
+                  <h3 className="font-sans font-bold text-base sm:text-lg text-stone-900 group-hover:text-emerald-700 transition leading-snug mt-1">
                     {language === 'te' ? step.titleTe : step.titleEn}
                   </h3>
 
@@ -207,9 +207,9 @@ export const OrganicProcessShowcase: React.FC<{ onExploreShop?: () => void }> = 
                 </div>
 
                 {/* Bottom Action Row */}
-                <div className="pt-3 border-t border-emerald-50 flex items-center justify-between text-xs font-bold text-emerald-700 group-hover:text-emerald-800">
+                <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-emerald-700 group-hover:text-emerald-800">
                   <span>{language === 'te' ? 'వివరాలు చూడండి' : 'Read Full Method'}</span>
-                  <div className="w-7 h-7 rounded-full bg-emerald-50 group-hover:bg-emerald-600 group-hover:text-white transition flex items-center justify-center">
+                  <div className="w-7 h-7 rounded-full bg-stone-100 group-hover:bg-emerald-800 group-hover:text-white transition flex items-center justify-center">
                     <ArrowRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -223,7 +223,7 @@ export const OrganicProcessShowcase: React.FC<{ onExploreShop?: () => void }> = 
           <div className="mt-12 text-center">
             <button
               onClick={onExploreShop}
-              className="px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs sm:text-sm shadow-green-glow hover:shadow-xl transition-all inline-flex items-center gap-2"
+              className="px-8 py-3.5 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all inline-flex items-center gap-2"
             >
               <span>{language === 'te' ? 'సేంద్రీయ ఉత్పత్తులను కొనండి' : 'Taste Pure Traditional Goodness – Shop Products'}</span>
               <ArrowRight className="w-4 h-4" />
@@ -237,7 +237,7 @@ export const OrganicProcessShowcase: React.FC<{ onExploreShop?: () => void }> = 
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-emerald-950/80 backdrop-blur-md animate-fadeIn">
           <div className="fixed inset-0" onClick={() => setSelectedStep(null)}></div>
 
-          <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-emerald-100 z-10 text-left my-6">
+          <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-stone-200/90 z-10 text-left my-6">
             {/* Modal Close Button */}
             <button
               onClick={() => setSelectedStep(null)}
@@ -296,7 +296,7 @@ export const OrganicProcessShowcase: React.FC<{ onExploreShop?: () => void }> = 
                     setSelectedStep(null);
                     if (onExploreShop) onExploreShop();
                   }}
-                  className="px-6 py-2.5 rounded-full bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 transition shadow-sm"
+                  className="px-6 py-2.5 rounded-xl bg-emerald-800 text-white font-bold text-xs hover:bg-emerald-900 transition shadow-sm hover:shadow-md"
                 >
                   {language === 'te' ? 'ఉత్పత్తులను బ్రౌజ్ చేయండి' : 'Browse Products Made This Way'}
                 </button>

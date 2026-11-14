@@ -33,14 +33,13 @@ export const Hero: React.FC<HeroProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* LEFT COLUMN: Typography, CTA, and "Our Service" Cards */}
-          <div className="lg:col-span-6 space-y-6 sm:space-y-8 text-left">
-            <div className="space-y-2">
-              {/* Element 1: Leaf Badge Pops Out */}
+          <div className="lg:col-span-6 space-y-6 sm:space-y-7 text-left">
+            <div className="space-y-3">
+              {/* Element 1: Leaf Badge */}
               <div 
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold border border-emerald-200 animate-pop-out hover:scale-105 transition-transform cursor-default" 
-                style={{ animationDelay: '120ms' }}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold border border-emerald-200/80"
               >
-                <Leaf className="w-3.5 h-3.5 text-emerald-600 animate-pulse" />
+                <Leaf className="w-3.5 h-3.5 text-emerald-700" />
                 <span>
                   {language === 'te'
                     ? '100% సేంద్రీయ & సహజ ఉత్పత్తులు'
@@ -48,30 +47,28 @@ export const Hero: React.FC<HeroProps> = ({
                 </span>
               </div>
 
-              {/* Element 2: Main Big Title Pops Out */}
+              {/* Element 2: Main Title */}
               <h1 
-                className="font-sans font-black text-4xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight leading-[1.12] animate-pop-out" 
-                style={{ animationDelay: '220ms' }}
+                className="font-sans font-extrabold text-3xl sm:text-5xl lg:text-[54px] text-stone-900 tracking-tight leading-[1.15]"
               >
                 {language === 'te' ? (
                   <>
                     మీ అభిమాన <br />
                     <span className="text-stone-900">సహజ ఆహారం</span> <br />
-                    <span className="text-emerald-600">స్వచ్ఛంగా మీ చెంతకు</span>
+                    <span className="text-emerald-800">స్వచ్ఛంగా మీ చెంతకు</span>
                   </>
                 ) : (
                   <>
-                    Your Favourite Food <br />
-                    Delivered Hot & <br />
-                    <span className="text-emerald-600">Fresh</span>
+                    Authentic Organic Food <br />
+                    Delivered Pure & <br />
+                    <span className="text-emerald-800">Fresh</span>
                   </>
                 )}
               </h1>
 
-              {/* Element 3: Paragraph Text Pops Out */}
+              {/* Element 3: Paragraph Text */}
               <p 
-                className="text-stone-600 text-sm sm:text-base leading-relaxed max-w-lg pt-2 font-normal animate-pop-out" 
-                style={{ animationDelay: '320ms' }}
+                className="text-stone-600 text-sm sm:text-base leading-relaxed max-w-lg pt-1 font-normal"
               >
                 {language === 'te'
                   ? 'డీడీఎస్ మహిళా సంఘాల రైతుల నుండి నేరుగా సంప్రదాయ చిరుధాన్యాలు, ఎద్దు గానుగ నూనెలు, మొలక పిండి రకాలు మరియు స్వచ్ఛమైన సేంద్రీయ కిరాణా.'
@@ -79,39 +76,37 @@ export const Hero: React.FC<HeroProps> = ({
               </p>
             </div>
 
-            {/* Element 4: Pill "Order Now" Button Pops Out with Spring Bounce & Shine */}
-            <div className="animate-pop-out" style={{ animationDelay: '420ms' }}>
+            {/* Element 4: Sleek Primary CTA Button */}
+            <div>
               <button
                 onClick={onShopClick}
-                className="shine-effect px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm sm:text-base shadow-green-glow hover:shadow-green-glow-lg transition-all duration-300 transform hover:-translate-y-1 inline-flex items-center gap-2 group"
+                className="px-7 py-3 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-sm sm:text-base shadow-sm hover:shadow transition-all duration-200 inline-flex items-center gap-2 group"
               >
                 <span>{language === 'te' ? 'ఇప్పుడే ఆర్డర్ చేయండి' : 'Order Now'}</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
             </div>
 
-            {/* Element 5: "Our Service" 3 Cards Staggered Pop-Out */}
-            <div className="pt-4 sm:pt-6 space-y-3">
+            {/* Element 5: "Our Service" 3 Clean Cards */}
+            <div className="pt-2 sm:pt-4 space-y-3">
               <h3 
-                className="font-sans font-black text-lg sm:text-xl text-stone-900 animate-pop-out" 
-                style={{ animationDelay: '480ms' }}
+                className="font-sans font-bold text-sm uppercase tracking-wider text-stone-500"
               >
-                {language === 'te' ? 'మా సేవలు' : 'Our Service'}
+                {language === 'te' ? 'మా సేవలు' : 'Our Services'}
               </h3>
 
               <div className="grid grid-cols-3 gap-3 max-w-lg">
                 {/* Service Card 1 */}
                 <div
                   onClick={onShopClick}
-                  className="bg-white/90 backdrop-blur-sm hover:bg-emerald-50/70 border border-stone-200/80 hover:border-emerald-300 rounded-2xl p-3 sm:p-4 cursor-pointer shadow-foodie-card hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start gap-2.5 text-center sm:text-left group transform hover:-translate-y-1 hover:scale-105 animate-pop-out"
-                  style={{ animationDelay: '520ms' }}
+                  className="bg-white hover:bg-stone-50/80 border border-stone-200/80 hover:border-emerald-600/40 rounded-xl p-3 sm:p-3.5 cursor-pointer shadow-subtle hover:shadow transition-all duration-200 flex flex-col sm:flex-row items-center sm:items-start gap-2.5 text-center sm:text-left group"
                 >
-                  <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                    <Utensils className="w-5 h-5" />
+                  <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-800 flex items-center justify-center shrink-0 group-hover:bg-emerald-800 group-hover:text-white transition-colors duration-200">
+                    <Utensils className="w-4 h-4" />
                   </div>
                   <div>
                     <h4 className="font-bold text-xs sm:text-sm text-stone-900 leading-tight">
-                      {language === 'te' ? 'సేంద్రీయ కిరాణా' : 'Catering Service'}
+                      {language === 'te' ? 'సేంద్రీయ కిరాణా' : 'Organic Staples'}
                     </h4>
                     <span className="text-[10px] text-stone-500 hidden sm:block mt-0.5">
                       100% Pure Food
@@ -119,21 +114,20 @@ export const Hero: React.FC<HeroProps> = ({
                   </div>
                 </div>
 
-                {/* Service Card 2: Active Card */}
+                {/* Service Card 2 */}
                 <div
                   onClick={onPackClick}
-                  className="bg-emerald-50/90 backdrop-blur-sm hover:bg-emerald-100/90 border border-emerald-300 rounded-2xl p-3 sm:p-4 cursor-pointer shadow-foodie-card transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start gap-2.5 text-center sm:text-left group transform scale-[1.02] hover:-translate-y-1 hover:scale-105 animate-pop-out"
-                  style={{ animationDelay: '600ms' }}
+                  className="bg-emerald-50/70 hover:bg-emerald-100/60 border border-emerald-200/80 rounded-xl p-3 sm:p-3.5 cursor-pointer shadow-subtle transition-all duration-200 flex flex-col sm:flex-row items-center sm:items-start gap-2.5 text-center sm:text-left group"
                 >
-                  <div className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 group-hover:scale-110 transition-all duration-300 shadow-sm">
-                    <Smartphone className="w-5 h-5" />
+                  <div className="w-8 h-8 rounded-lg bg-emerald-800 text-white flex items-center justify-center shrink-0">
+                    <Smartphone className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-xs sm:text-sm text-emerald-950 leading-tight">
-                      {language === 'te' ? 'నెలవారీ ప్యాక్' : 'Online Booking'}
+                    <h4 className="font-bold text-xs sm:text-sm text-emerald-950 leading-tight">
+                      {language === 'te' ? 'నెలవారీ ప్యాక్' : 'Monthly Packs'}
                     </h4>
-                    <span className="text-[10px] text-emerald-700 font-semibold hidden sm:block mt-0.5">
-                      Monthly Packs
+                    <span className="text-[10px] text-emerald-800 font-medium hidden sm:block mt-0.5">
+                      Subscribed Box
                     </span>
                   </div>
                 </div>
@@ -141,18 +135,17 @@ export const Hero: React.FC<HeroProps> = ({
                 {/* Service Card 3 */}
                 <div
                   onClick={onDeliveryClick || onShopClick}
-                  className="bg-white/90 backdrop-blur-sm hover:bg-emerald-50/70 border border-stone-200/80 hover:border-emerald-300 rounded-2xl p-3 sm:p-4 cursor-pointer shadow-foodie-card hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start gap-2.5 text-center sm:text-left group transform hover:-translate-y-1 hover:scale-105 animate-pop-out"
-                  style={{ animationDelay: '680ms' }}
+                  className="bg-white hover:bg-stone-50/80 border border-stone-200/80 hover:border-emerald-600/40 rounded-xl p-3 sm:p-3.5 cursor-pointer shadow-subtle hover:shadow transition-all duration-200 flex flex-col sm:flex-row items-center sm:items-start gap-2.5 text-center sm:text-left group"
                 >
-                  <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                    <Truck className="w-5 h-5" />
+                  <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-800 flex items-center justify-center shrink-0 group-hover:bg-emerald-800 group-hover:text-white transition-colors duration-200">
+                    <Truck className="w-4 h-4" />
                   </div>
                   <div>
                     <h4 className="font-bold text-xs sm:text-sm text-stone-900 leading-tight">
-                      {language === 'te' ? 'హోమ్ డెలివరీ' : 'Delivery Service'}
+                      {language === 'te' ? 'హోమ్ డెలివరీ' : 'Doorstep Delivery'}
                     </h4>
                     <span className="text-[10px] text-stone-500 hidden sm:block mt-0.5">
-                      Fast Doorstep
+                      Fast Dispatch
                     </span>
                   </div>
                 </div>
@@ -160,72 +153,64 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
           </div>
 
-          {/* RIGHT COLUMN: Innovative Logo-Inspired Organic Composition (Hands Holding Platter & Leaf Wreath) */}
+          {/* RIGHT COLUMN: Refined Organic Harvest Composition */}
           <div 
-            className="lg:col-span-6 relative flex items-center justify-center animate-pop-out-bloom" 
-            style={{ animationDelay: '250ms' }}
+            className="lg:col-span-6 relative flex items-center justify-center"
           >
-            <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center">
+            <div className="relative w-full max-w-[460px] aspect-square flex items-center justify-center">
               
-              {/* Vibrant Green Semi-Circle Arc Backdrop with Pulse Glow */}
+              {/* Subtle Natural Ambient Ring */}
               <div
-                className="absolute top-4 right-0 w-[88%] h-[88%] bg-foodieGreen rounded-full z-0 overflow-hidden shadow-green-glow animate-pop-out-bloom"
-                style={{ animationDelay: '200ms' }}
-              >
-                <div className="w-full h-full bg-gradient-to-br from-emerald-400 via-emerald-500 to-green-600 opacity-95"></div>
-              </div>
+                className="absolute w-[92%] h-[92%] rounded-full bg-emerald-900/5 border border-emerald-900/10 pointer-events-none"
+              />
 
-              {/* Innovative Composition: Bangle-Adorned Hands Holding Farm Platter Wreath */}
+              {/* Main Circular Imagery with Clean White Border and Natural Shadow */}
               <div 
-                className="relative z-10 w-[88%] h-[88%] rounded-full shadow-2xl p-1 bg-white border-4 border-white overflow-hidden transform hover:scale-105 transition-transform duration-500 animate-pop-out-bloom group"
-                style={{ animationDelay: '300ms' }}
+                className="relative z-10 w-[86%] h-[86%] rounded-full shadow-lg p-1.5 bg-white border border-stone-200/90 overflow-hidden"
               >
                 <img
                   src="/images/hero_innovative_emblem.jpg"
                   alt="GVKSS - Go Vishwa Kalyana Voluntary Service Organization - Nurturing hands holding organic harvest platter"
-                  className="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover rounded-full"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = '/images/hero_organic_products.jpg';
                   }}
                 />
               </div>
 
-              {/* Interactive Floating Badge 1: Top-Left (A2 Bilona Ghee) */}
+              {/* Floating Badge 1: Top-Left (A2 Bilona Ghee) */}
               <div 
-                className="absolute -top-2 -left-2 z-20 hidden sm:flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-emerald-200 animate-pop-out hover:scale-110 transition-transform cursor-pointer"
-                style={{ animationDelay: '650ms' }}
+                className="absolute top-2 left-0 z-20 hidden sm:flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-xl shadow-subtle border border-stone-200 cursor-pointer hover:border-emerald-600/40 transition-colors"
                 onClick={onShopClick}
               >
-                <Sparkles className="w-3.5 h-3.5 text-emerald-600 animate-pulse" />
-                <span className="text-xs font-bold text-stone-800">
+                <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
+                <span className="text-xs font-semibold text-stone-800">
                   {language === 'te' ? 'బిలోనా A2 నెయ్యి' : 'A2 Bilona Ghee'}
                 </span>
               </div>
 
-              {/* Interactive Floating Badge 2: Top-Right (Wood-Pressed Oils) */}
+              {/* Floating Badge 2: Top-Right (Wood-Pressed Oils) */}
               <div 
-                className="absolute top-4 -right-3 z-20 hidden sm:flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-emerald-200 animate-pop-out hover:scale-110 transition-transform cursor-pointer"
-                style={{ animationDelay: '700ms' }}
+                className="absolute top-6 right-0 z-20 hidden sm:flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-xl shadow-subtle border border-stone-200 cursor-pointer hover:border-emerald-600/40 transition-colors"
                 onClick={onShopClick}
               >
-                <Leaf className="w-3.5 h-3.5 text-emerald-600" />
-                <span className="text-xs font-bold text-stone-800">
+                <Leaf className="w-3.5 h-3.5 text-emerald-700" />
+                <span className="text-xs font-semibold text-stone-800">
                   {language === 'te' ? 'ఎద్దు గానుగ నూనెలు' : 'Cold-Pressed Oils'}
                 </span>
               </div>
 
-              {/* Verified Organic Badge Corner (Pops Out) */}
+              {/* Verified Organic Badge Corner */}
               <div 
-                className="absolute -bottom-6 right-4 z-20 flex items-center gap-2 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-full shadow-xl border border-emerald-200 animate-pop-out hover:scale-105 transition-transform" 
-                style={{ animationDelay: '750ms' }}
+                className="absolute -bottom-3 right-4 z-20 flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-xl shadow-md border border-stone-200" 
               >
-                <ShieldCheck className="w-5 h-5 text-emerald-600 animate-pulse" />
+                <ShieldCheck className="w-5 h-5 text-emerald-700" />
                 <div className="text-left">
-                  <span className="text-[10px] font-bold text-stone-500 uppercase tracking-wider block leading-none">
+                  <span className="text-[10px] font-bold text-stone-400 uppercase tracking-wider block leading-none">
                     DDS & GVKSS
                   </span>
-                  <span className="text-xs font-black text-emerald-900 leading-none">
-                    100% Pure Organic
+                  <span className="text-xs font-extrabold text-emerald-900 leading-none">
+                    100% Certified Organic
                   </span>
                 </div>
               </div>

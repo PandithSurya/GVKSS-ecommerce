@@ -54,19 +54,25 @@ export const OrderReceipt: React.FC<OrderReceiptProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-emerald-950/80 backdrop-blur-sm overflow-y-auto animate-fadeIn">
       <div className="fixed inset-0" onClick={onClose}></div>
 
-      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-emerald-200 z-10 my-6 print:m-0 print:p-0 print:border-none print:shadow-none">
+      <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-stone-200/90 z-10 my-6 print:m-0 print:p-0 print:border-none print:shadow-none">
         {/* Success Banner */}
         <div className="p-6 bg-emerald-700 text-white text-center print:bg-white print:text-black">
           <div className="w-14 h-14 rounded-full bg-white/20 border-2 border-white/40 flex items-center justify-center mx-auto mb-3 text-white">
             <CheckCircle2 className="w-8 h-8" />
           </div>
           <h2 className="font-sans font-black text-2xl">
-            {language === 'te' ? 'ఆర్డర్ విజయవంతంగా నమోదు చేయబడింది!' : 'Order Placed Successfully!'}
+            {order.status === 'processing'
+              ? (language === 'te' ? 'యూపీఐ చెల్లింపు ధృవీకరణ పెండింగ్‌లో ఉంది' : 'UPI Payment Verification Pending')
+              : (language === 'te' ? 'ఆర్డర్ విజయవంతంగా నమోదు చేయబడింది!' : 'Order Placed Successfully!')}
           </h2>
           <p className="text-xs sm:text-sm text-emerald-100 mt-1 max-w-md mx-auto">
-            {language === 'te'
-              ? 'మీ ఆర్డర్ నిర్ధారించబడింది. త్వరలోనే మా ప్రతినిధి మీతో సంప్రదిస్తారు.'
-              : 'Thank you for ordering natural & organic products from GVKSS.'}
+            {order.status === 'processing'
+              ? (language === 'te'
+                  ? `మీరు సమర్పించిన UTR నంబర్ ఆధారంగా మా బృందం బ్యాంక్ డిపాజిట్‌ను తనిఖీ చేసి త్వరలోనే నిర్ధారిస్తుంది.`
+                  : `Your UTR reference ${order.utrNumber ? `(${order.utrNumber})` : ''} has been submitted for verification. We will confirm your order shortly.`)
+              : (language === 'te'
+                  ? 'మీ ఆర్డర్ నిర్ధారించబడింది. త్వరలోనే మా ప్రతినిధి మీతో సంప్రదిస్తారు.'
+                  : 'Thank you for ordering natural & organic products from GVKSS.')}
           </p>
         </div>
 
@@ -217,15 +223,15 @@ export const OrderReceipt: React.FC<OrderReceiptProps> = ({
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="py-2.5 px-4 rounded-full bg-white border border-stone-300 text-stone-800 font-bold text-xs hover:bg-stone-50 transition flex items-center gap-1.5 shadow-sm"
+              className="py-2.5 px-4 rounded-xl bg-white border border-stone-300 text-stone-800 font-bold text-xs hover:bg-stone-50 transition flex items-center gap-1.5 shadow-sm"
             >
-              <Printer className="w-4 h-4 text-emerald-700" />
+              <Printer className="w-4 h-4 text-emerald-800" />
               <span>Print Invoice</span>
             </button>
 
             <button
               onClick={handleWhatsAppSendReceipt}
-              className="py-2.5 px-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition flex items-center gap-1.5 shadow-green-glow"
+              className="py-2.5 px-4 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs transition flex items-center gap-1.5 shadow-sm hover:shadow-md"
             >
               <MessageCircle className="w-4 h-4" />
               <span>Send to WhatsApp</span>
@@ -234,7 +240,7 @@ export const OrderReceipt: React.FC<OrderReceiptProps> = ({
 
           <button
             onClick={onContinueShopping}
-            className="py-2.5 px-5 rounded-full bg-stone-900 text-white font-bold text-xs hover:bg-stone-800 transition"
+            className="py-2.5 px-5 rounded-xl bg-stone-900 text-white font-bold text-xs hover:bg-stone-800 transition"
           >
             {language === 'te' ? 'షాపింగ్ కొనసాగించండి' : 'Continue Shopping'}
           </button>

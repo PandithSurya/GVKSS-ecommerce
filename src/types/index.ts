@@ -100,6 +100,9 @@ export interface Order {
   paymentMethod: 'upi' | 'cod' | 'card';
   date: string;
   status: 'confirmed' | 'processing' | 'shipped' | 'delivered';
+  utrNumber?: string;
+  paymentStatus?: string;
+  orderNumber?: string;
 }
 
 export interface FilterState {

@@ -19,7 +19,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
 
   if (products.length === 0) {
     return (
-      <div className="bg-white rounded-3xl border border-stone-200 p-12 text-center my-8 shadow-sm flex flex-col items-center justify-center">
+      <div className="bg-white rounded-2xl border border-stone-200 p-12 text-center my-8 shadow-sm flex flex-col items-center justify-center">
         <div className="w-16 h-16 rounded-full bg-cream-200 flex items-center justify-center text-stone-400 mb-4">
           <SearchX className="w-8 h-8 text-forest-700" />
         </div>

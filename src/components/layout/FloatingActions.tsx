@@ -19,15 +19,15 @@ export const FloatingActions: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-5 z-40 flex flex-col items-end gap-3 animate-pop-out" style={{ animationDelay: '650ms' }}>
+    <div className="fixed bottom-6 right-5 z-40 flex flex-col items-end gap-2.5">
       {/* Scroll to Top */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
           aria-label="Scroll to top"
-          className="w-11 h-11 rounded-full bg-white text-emerald-800 border border-emerald-200 shadow-lg hover:bg-emerald-50 transition flex items-center justify-center hover:scale-110"
+          className="w-10 h-10 rounded-xl bg-white text-stone-700 border border-stone-200/90 shadow-md hover:bg-stone-50 transition-colors flex items-center justify-center"
         >
-          <ArrowUp className="w-5 h-5 text-emerald-700" />
+          <ArrowUp className="w-4 h-4 text-emerald-800" />
         </button>
       )}
 
@@ -35,10 +35,10 @@ export const FloatingActions: React.FC = () => {
       <a
         href="tel:9391628344"
         aria-label="Call GVKSS"
-        className="group flex items-center gap-2 bg-emerald-900 text-white pl-3.5 pr-4 py-2.5 rounded-full shadow-lg hover:bg-emerald-950 transition hover:scale-105 border border-emerald-700"
+        className="group flex items-center gap-2 bg-stone-900 text-white pl-3.5 pr-4 py-2 rounded-xl shadow-md hover:bg-black transition-colors border border-stone-800"
       >
-        <Phone className="w-5 h-5 text-emerald-300" />
-        <span className="text-xs font-bold hidden sm:inline">
+        <Phone className="w-4 h-4 text-emerald-400" />
+        <span className="text-xs font-semibold hidden sm:inline">
           {language === 'te' ? 'కాల్ చేయండి: 9391628344' : 'Call 9391628344'}
         </span>
       </a>
@@ -49,16 +49,16 @@ export const FloatingActions: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Order on WhatsApp"
-        className="group flex items-center gap-2.5 bg-emerald-600 text-white pl-4 pr-5 py-3 rounded-full shadow-2xl hover:bg-emerald-700 transition hover:scale-105 border-2 border-white/30"
+        className="group flex items-center gap-2.5 bg-emerald-800 text-white pl-3.5 pr-4 py-2.5 rounded-xl shadow-md hover:bg-emerald-900 transition-colors border border-emerald-700"
       >
-        <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
-          <MessageCircle className="w-4 h-4 text-white" />
+        <div className="w-6 h-6 rounded-lg bg-emerald-700 flex items-center justify-center">
+          <MessageCircle className="w-3.5 h-3.5 text-white" />
         </div>
         <div className="text-left">
-          <span className="block text-[10px] font-medium text-emerald-100 uppercase tracking-wider">
+          <span className="block text-[10px] font-medium text-emerald-200 uppercase tracking-wider leading-none">
             {language === 'te' ? 'తక్షణ ఆర్డర్' : 'Fast Order'}
           </span>
-          <span className="block text-xs font-extrabold leading-none">
+          <span className="block text-xs font-bold leading-tight mt-0.5">
             {language === 'te' ? 'వాట్సాప్ ఆర్డర్' : 'WhatsApp Order'}
           </span>
         </div>

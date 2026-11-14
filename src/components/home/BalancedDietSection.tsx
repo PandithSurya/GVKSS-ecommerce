@@ -82,20 +82,20 @@ export const BalancedDietSection: React.FC<BalancedDietSectionProps> = ({
               </p>
             </div>
 
-            {/* Buttons Row (Pure Green Pill Button + Green Play Button) */}
+            {/* Buttons Row */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 onClick={onOrderClick}
-                className="px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm sm:text-base shadow-green-glow hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5"
+                className="px-8 py-3.5 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-sm sm:text-base shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5"
               >
                 <span>{language === 'te' ? 'ఇప్పుడే ఆర్డర్ చేయండి' : 'Order Now'}</span>
               </button>
 
               <button
                 onClick={() => setIsVideoModalOpen(true)}
-                className="inline-flex items-center gap-2.5 px-4 py-3 rounded-full text-emerald-950 font-bold text-sm hover:bg-emerald-50 transition group"
+                className="inline-flex items-center gap-2.5 px-4 py-3 rounded-xl text-stone-900 font-bold text-sm hover:bg-stone-100 transition group"
               >
-                <div className="w-10 h-10 rounded-full bg-emerald-800 text-white flex items-center justify-center shadow-md group-hover:scale-110 transition shrink-0">
+                <div className="w-10 h-10 rounded-full bg-emerald-800 text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition shrink-0">
                   <Play className="w-4 h-4 fill-current text-white ml-0.5" />
                 </div>
                 <span>{language === 'te' ? 'మా కథ & వీడియో' : 'Play Video'}</span>
@@ -110,7 +110,7 @@ export const BalancedDietSection: React.FC<BalancedDietSectionProps> = ({
       {isVideoModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-emerald-950/80 backdrop-blur-sm animate-fadeIn">
           <div className="fixed inset-0" onClick={() => setIsVideoModalOpen(false)}></div>
-          <div className="relative w-full max-w-2xl bg-white rounded-3xl p-6 sm:p-8 shadow-2xl z-10 border border-emerald-100 text-left">
+          <div className="relative w-full max-w-2xl bg-white rounded-2xl p-6 sm:p-8 shadow-2xl z-10 border border-stone-200/90 text-left">
             <button
               onClick={() => setIsVideoModalOpen(false)}
               className="absolute top-4 right-4 p-2 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition"

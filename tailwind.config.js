@@ -60,57 +60,43 @@ export default {
         telugu: ['"Noto Sans Telugu"', '"Gautami"', 'sans-serif'],
       },
       boxShadow: {
-        'foodie': '0 20px 40px -15px rgba(22, 163, 74, 0.12)',
-        'foodie-card': '0 10px 25px -5px rgba(0, 0, 0, 0.05)',
-        'green-glow': '0 10px 30px -5px rgba(22, 163, 74, 0.4)',
-        'green-glow-lg': '0 20px 45px -10px rgba(22, 163, 74, 0.45)',
+        'subtle': '0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.04)',
+        'foodie': '0 12px 28px -6px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03)',
+        'foodie-card': '0 2px 8px -2px rgba(0, 0, 0, 0.05), 0 1px 4px -1px rgba(0, 0, 0, 0.03)',
+        'green-glow': '0 4px 14px -2px rgba(22, 101, 52, 0.18)',
+        'green-glow-lg': '0 8px 20px -4px rgba(22, 101, 52, 0.22)',
       },
       animation: {
-        'fade-in': 'fadeIn 0.35s ease-in-out',
-        'slide-up': 'slideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1)',
-        'pop-out': 'popOutSpring 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) both',
-        'pop-out-bloom': 'popOutBloom 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) both',
-        'pop-out-down': 'popOutDown 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both',
-        'view-transition': 'viewTransition 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-        'float-slow': 'floatSlow 7s ease-in-out infinite',
-        'float-slow-reverse': 'floatSlowReverse 9s ease-in-out infinite',
+        'fade-in': 'fadeIn 0.25s ease-out',
+        'slide-up': 'slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+        'pop-out': 'fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both',
+        'pop-out-bloom': 'fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both',
+        'pop-out-down': 'fadeInDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) both',
+        'view-transition': 'viewTransition 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'float-slow': 'fadeIn 0.3s ease-out',
+        'float-slow-reverse': 'fadeIn 0.3s ease-out',
       },
       keyframes: {
-        popOutSpring: {
-          '0%': { opacity: '0', transform: 'scale(0.5) translateY(32px)' },
-          '70%': { opacity: '1', transform: 'scale(1.06) translateY(-4px)' },
-          '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        popOutBloom: {
-          '0%': { opacity: '0', transform: 'scale(0.3) rotate(-15deg)' },
-          '75%': { opacity: '1', transform: 'scale(1.06) rotate(2deg)' },
-          '100%': { opacity: '1', transform: 'scale(1) rotate(0deg)' },
-        },
-        popOutDown: {
-          '0%': { opacity: '0', transform: 'translateY(-100%) scale(0.95)' },
-          '75%': { opacity: '1', transform: 'translateY(4px) scale(1.01)' },
-          '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
-        },
-        viewTransition: {
-          '0%': { opacity: '0', transform: 'translateY(12px) scale(0.98)' },
-          '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+        fadeInDown: {
+          '0%': { opacity: '0', transform: 'translateY(-8px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         fadeIn: {
-          '0%': { opacity: '0', transform: 'translateY(6px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
         slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(16px)' },
+          '0%': { opacity: '0', transform: 'translateY(12px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        floatSlow: {
-          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-          '50%': { transform: 'translateY(-14px) rotate(3deg)' },
+        viewTransition: {
+          '0%': { opacity: '0', transform: 'translateY(8px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        floatSlowReverse: {
-          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-          '50%': { transform: 'translateY(14px) rotate(-3deg)' },
-        }
       }
     },
   },

@@ -6,7 +6,7 @@ export const TopBanner: React.FC = () => {
   const { language, t } = useLanguage();
 
   return (
-    <div className="bg-emerald-950 text-white text-xs py-2 px-4 border-b border-emerald-800/80 relative z-30 shadow-sm animate-pop-out-down">
+    <div className="bg-emerald-950 text-white text-xs py-2 px-4 border-b border-emerald-900/60 relative z-30">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         {/* Left: Free delivery notice */}
         <div className="flex items-center gap-2 font-medium">

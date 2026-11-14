@@ -40,7 +40,7 @@ export const MonthlyPackView: React.FC = () => {
     <div className="py-10 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Hero Banner */}
-        <div className="bg-emerald-950 text-white rounded-3xl p-6 sm:p-12 relative overflow-hidden shadow-xl border-b-4 border-emerald-600">
+        <div className="bg-emerald-950 text-white rounded-2xl p-6 sm:p-12 relative overflow-hidden shadow-xl border-b-4 border-emerald-600">
           <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="relative z-10 max-w-3xl space-y-3">
@@ -104,7 +104,7 @@ export const MonthlyPackView: React.FC = () => {
         </div>
 
         {/* Active Pack Display Container */}
-        <div className="bg-white rounded-3xl border border-emerald-100 shadow-lg overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0">
+        <div className="bg-white rounded-2xl border border-emerald-100 shadow-lg overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0">
           {/* Left Column: Pack Overview */}
           <div className="lg:col-span-5 p-6 sm:p-8 bg-emerald-50/40 border-b lg:border-b-0 lg:border-r border-emerald-100 flex flex-col justify-between">
             <div className="space-y-4">
@@ -173,7 +173,7 @@ export const MonthlyPackView: React.FC = () => {
             <div className="pt-6 mt-6 border-t border-emerald-100 space-y-2.5">
               <button
                 onClick={() => addMonthlyPack(currentPack)}
-                className="w-full py-3.5 px-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition flex items-center justify-center gap-2 shadow-green-glow"
+                className="w-full py-3.5 px-4 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-sm transition flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
               >
                 <ShoppingBag className="w-4 h-4 text-emerald-200" />
                 <span>{t.pack.addEntirePack}</span>
@@ -181,7 +181,7 @@ export const MonthlyPackView: React.FC = () => {
 
               <button
                 onClick={() => handleWhatsAppOrderPack(currentPack)}
-                className="w-full py-3 px-4 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-sm"
+                className="w-full py-3 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-sm"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Order Pack via WhatsApp</span>

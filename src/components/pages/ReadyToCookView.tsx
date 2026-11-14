@@ -34,7 +34,7 @@ export const ReadyToCookView: React.FC<ReadyToCookViewProps> = ({
     <div className="py-10 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Banner */}
-        <div className="bg-emerald-950 text-white rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-md border-b-4 border-emerald-600">
+        <div className="bg-emerald-950 text-white rounded-2xl p-6 sm:p-10 relative overflow-hidden shadow-md border-b-4 border-emerald-600">
           <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-400/10 rounded-full blur-2xl pointer-events-none"></div>
 
           <div className="relative z-10 max-w-2xl space-y-2">

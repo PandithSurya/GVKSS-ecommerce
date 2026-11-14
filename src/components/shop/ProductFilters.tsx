@@ -36,7 +36,7 @@ export const ProductFilters: React.FC<ProductFiltersProps> = ({
     filters.onlyFeatured;
 
   return (
-    <div className="bg-white rounded-3xl p-5 sm:p-6 border border-emerald-100 shadow-sm space-y-6">
+    <div className="bg-white rounded-2xl p-5 sm:p-6 border border-stone-200/90 shadow-sm space-y-6">
       {/* Header & Reset */}
       <div className="flex items-center justify-between pb-4 border-b border-emerald-50">
         <div className="flex items-center gap-2">

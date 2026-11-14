@@ -29,7 +29,7 @@ export const AboutView: React.FC = () => {
     <div className="py-10 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Banner */}
-        <div className="bg-emerald-950 text-white rounded-3xl p-6 sm:p-12 relative overflow-hidden shadow-xl border-b-4 border-emerald-600">
+        <div className="bg-emerald-950 text-white rounded-2xl p-6 sm:p-12 relative overflow-hidden shadow-xl border-b-4 border-emerald-600">
           <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="relative z-10 max-w-3xl space-y-3">
@@ -54,7 +54,7 @@ export const AboutView: React.FC = () => {
 
         {/* 4 Core Pillars Overview */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 border border-emerald-100 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 border border-emerald-100 shadow-sm flex flex-col justify-between hover:shadow-md transition">
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center">
                 <Users className="w-6 h-6" />
@@ -73,7 +73,7 @@ export const AboutView: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 border border-emerald-100 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 border border-emerald-100 shadow-sm flex flex-col justify-between hover:shadow-md transition">
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center">
                 <ShieldCheck className="w-6 h-6" />
@@ -92,7 +92,7 @@ export const AboutView: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 border border-emerald-100 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 border border-emerald-100 shadow-sm flex flex-col justify-between hover:shadow-md transition">
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center">
                 <Milk className="w-6 h-6" />
@@ -111,7 +111,7 @@ export const AboutView: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 border border-emerald-100 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 border border-emerald-100 shadow-sm flex flex-col justify-between hover:shadow-md transition">
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center">
                 <HeartHandshake className="w-6 h-6" />
@@ -134,7 +134,7 @@ export const AboutView: React.FC = () => {
         {/* =========================================================================
             OFFICIAL ENGLISH SUMMARY FROM REFERENCE PAMPHLETS
             ========================================================================= */}
-        <div className="bg-white/95 backdrop-blur-md rounded-3xl border border-emerald-200 p-6 sm:p-10 shadow-foodie space-y-8">
+        <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-emerald-200 p-6 sm:p-10 shadow-foodie space-y-8">
           
           <div className="border-b border-stone-200 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
@@ -232,7 +232,7 @@ export const AboutView: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="lg:col-span-5 bg-emerald-950 text-white p-6 sm:p-7 rounded-3xl space-y-4">
+                <div className="lg:col-span-5 bg-emerald-950 text-white p-6 sm:p-7 rounded-2xl space-y-4">
                   <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wider">
                     <ShieldCheck className="w-4 h-4" />
                     Key Reference Facts
@@ -286,7 +286,7 @@ export const AboutView: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="lg:col-span-5 bg-stone-50 p-6 rounded-3xl border border-stone-200 space-y-3">
+                <div className="lg:col-span-5 bg-stone-50 p-6 rounded-2xl border border-stone-200 space-y-3">
                   <h4 className="font-sans font-black text-base text-stone-900 flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-emerald-600" />
                     Active Gaushala Sanctuaries
@@ -337,7 +337,7 @@ export const AboutView: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="lg:col-span-5 bg-emerald-900 text-white p-6 rounded-3xl space-y-3">
+                <div className="lg:col-span-5 bg-emerald-900 text-white p-6 rounded-2xl space-y-3">
                   <h4 className="font-sans font-black text-base text-white">
                     Ancient Soil Silt Revival (ఒండ్రు మట్టి)
                   </h4>
@@ -381,7 +381,7 @@ export const AboutView: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="lg:col-span-5 bg-stone-50 p-6 rounded-3xl border border-stone-200 space-y-3">
+                <div className="lg:col-span-5 bg-stone-50 p-6 rounded-2xl border border-stone-200 space-y-3">
                   <h4 className="font-sans font-black text-base text-stone-900">
                     Hyderabad Store & Branch Details
                   </h4>
@@ -417,7 +417,7 @@ export const AboutView: React.FC = () => {
                     100% of donor contributions and proceeds from the Ugadi Diary are dedicated transparently to Gaushala maintenance, medical care, ambulance services, and supporting natural farming farmers.
                   </p>
 
-                  <div className="bg-emerald-950 text-white p-6 rounded-3xl space-y-3 font-mono text-xs shadow-md">
+                  <div className="bg-emerald-950 text-white p-6 rounded-2xl space-y-3 font-mono text-xs shadow-md">
                     <div className="text-emerald-400 font-bold uppercase tracking-wider text-[11px] font-sans">
                       Verified Bank Transfer Details:
                     </div>
@@ -461,7 +461,7 @@ export const AboutView: React.FC = () => {
         </div>
 
         {/* Panchagavya Natural Medicine Special Feature */}
-        <div className="bg-emerald-50/70 rounded-3xl p-8 border border-emerald-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-emerald-50/70 rounded-2xl p-8 border border-emerald-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2">
             <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-600 text-white inline-block">
               {language === 'te' ? 'వైద్య సేవలు' : 'Wellness & Healthcare'}
@@ -480,7 +480,7 @@ export const AboutView: React.FC = () => {
 
           <a
             href={`tel:${businessInfo.panchagavyaInfo.phone}`}
-            className="px-6 py-3 rounded-full bg-emerald-600 text-white font-bold text-xs sm:text-sm hover:bg-emerald-700 transition shrink-0 shadow-green-glow"
+            className="px-6 py-3 rounded-xl bg-emerald-800 text-white font-bold text-xs sm:text-sm hover:bg-emerald-900 transition shrink-0 shadow-sm hover:shadow-md"
           >
             Call {businessInfo.panchagavyaInfo.phone}
           </a>
